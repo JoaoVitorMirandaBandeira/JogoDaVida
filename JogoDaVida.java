@@ -11,7 +11,7 @@ public class JogoDaVida{
          }
          matrizFormatada += "\n";
       }
-      return matrizFormatada;
+      return matrizFormatada;-
    }
    //Declaração do método formatarMatriz
    
@@ -29,10 +29,22 @@ public class JogoDaVida{
          for(int j = 0; j < matriz[i].length; j++){
             matriz[i][j] = gerarNumerosAleatorios(); 
          }
-       }
-      //return matriz;
+      }
    }
    //Declaração do método preencherMatriz
+   
+   
+   /*
+   C = Teremos 4 validações para os cantos matriz[0][0] matriz[0][3] matriz[3][0] matriz[3][3]
+   F = Teremos 4 validações para as faces do canto 
+   M = Teremos validação para a meiuca 
+   
+   C F F C
+   F M M F
+   F M M F
+   C F F C 
+   
+   */
    
    public static void main(String[] args){
       //Variaveis

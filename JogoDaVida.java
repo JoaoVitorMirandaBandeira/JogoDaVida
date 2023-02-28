@@ -2,6 +2,7 @@ import java.util.*;
 import java.util.Random;
 
 public class JogoDaVida{
+   static Validacao validador = new Validacao();
    static int n;
    static int[][] matriz = new int[n][n];
 	
@@ -34,43 +35,6 @@ public class JogoDaVida{
          }
       }
    }
-   
-   public static boolean validacaoDasPontas(int i, int j,int k) {
-   
-	   if( (i == 0 && j == 0) || (i == 0 && j == k) || (i == k && j == 0 ) || ( i== k && j == k )){
-         return true;
-      }else{
-         return false;
-      }
-   }
-   public static boolean validaBordaSuperior(int i, int j,int k) {
-      if((i == 0 && j != 0) && j != k){
-         return true;
-      }else{
-         return false;
-      }
-   }
-   public static boolean validaBordaInferior(int i, int j,int k) {
-      if( (i == k && j != 0) && j != k){
-         return true;
-      }else{
-         return false;
-      }
-   }
-   public static boolean validaBordaEsquerda(int i, int j,int k) {
-      if( (j == 0 && i != 0) && i != k){
-         return true;
-      }else{
-         return false;
-      }
-   }
-   public static boolean validaBordaDireita(int i, int j,int k) {
-      if( (j == k && i != 0) && i != k){
-         return true;
-      }else{
-         return false;
-      }
-   }
    //Declaração do método preencherMatriz
    
    
@@ -90,15 +54,15 @@ public class JogoDaVida{
       System.out.println("N = "+ k);
        for(int i = 0; i < matriz.length; i++){
          for(int j = 0; j < matriz[i].length; j++){
-             if(validacaoDasPontas(i,j,k)){
+             if(validador.validacaoDasPontas(i,j,k)){
                System.out.println("Estou no canto");
-             }else if(validaBordaSuperior(i,j,k)){
+             }else if(validador.validaBordaSuperior(i,j,k)){
                System.out.println("Estou na borda Superior");
-             }else if(validaBordaInferior(i,j,k)){
+             }else if(validador.validaBordaInferior(i,j,k)){
                System.out.println("Estou na borda Inferior");
-             }else if(validaBordaEsquerda(i,j,k)){
+             }else if(validador.validaBordaEsquerda(i,j,k)){
                System.out.println("Estou na borda Esquerda");
-             }else if(validaBordaDireita(i,j,k)){
+             }else if(validador.validaBordaDireita(i,j,k)){
                System.out.println("Estou na borda Direita");
              }else{
                System.out.println("Estou no meio");

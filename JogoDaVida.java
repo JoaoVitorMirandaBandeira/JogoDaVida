@@ -85,7 +85,7 @@ public class JogoDaVida{
    C F F C 
    
    */
-   public static void jogo(int[][] matriz,int k){
+   public static void jogoDaVida(int[][] matriz,int k){
       k-=1;
       System.out.println("N = "+ k);
        for(int i = 0; i < matriz.length; i++){
@@ -122,6 +122,6 @@ public class JogoDaVida{
       preencherMatriz(matriz);
       //Chama o método formatarMatriz para imprimir a matriz formatada
       System.out.println(formatarMatriz(matriz));
-      jogo(matriz,matriz.length);
+      jogoDaVida(matriz,matriz.length);
    }
 }

@@ -1,32 +1,49 @@
-class Matriz{
-   //Declaração do método formatarMatriz
-   public static String formatarMatriz(int[][] matriz){
-      String matrizFormatada = "";
-      for(int[] i : matriz){
-         for(int j : i){
-            matrizFormatada += j + " "; 
-         }
-         matrizFormatada += "\n";
-      }
-      return matrizFormatada;
-   }
-   //Declaração do método formatarMatriz
-   
-   //Declaração do método gerarNumerosAleatorios
-   public static int gerarNumerosAleatorios(){
-      Random rand = new Random();
-      int random = rand.nextInt(2);
-      return random;
-   }
-   //Declaração do método gerarNumerosAleatorios
-   
-   //Declaração do método preencherMatriz
-   public static void preencherMatriz(int[][] matriz){
-      for(int i = 0; i < matriz.length; i++){
-         for(int j = 0; j < matriz[i].length; j++){
-            matriz[i][j] = gerarNumerosAleatorios(); 
-         }
-      }
-   }
-   //Declaração do método preencherMatriz
+import java.util.*;
+
+public class Matriz {
+    Scanner leia = new Scanner(System.in);
+    int n;
+    int[][] matriz;
+
+    public void definirDimencaoMatriz() {
+        System.out.println("Qual tamanho da Matriz?");
+        n = leia.nextInt();
+        this.matriz = new int[n][n];
+    }
+    public int length(){
+      return this.matriz.length;
+    }
+    public int[][] getMatriz(){
+      return this.matriz;
+    }
+    // Declaração do método formatarMatriz
+    public String formatarMatriz() {
+        String matrizFormatada = "";
+        for (int[] i : matriz) {
+            for (int j : i) {
+                matrizFormatada += j + " ";
+            }
+            matrizFormatada += "\n";
+        }
+        return matrizFormatada;
+    }
+    // Declaração do método formatarMatriz
+
+    // Declaração do método gerarNumerosAleatorios
+    public int gerarNumerosAleatorios() {
+        Random rand = new Random();
+        int random = rand.nextInt(2);
+        return random;
+    }
+    // Declaração do método gerarNumerosAleatorios
+
+    // Declaração do método preencherMatriz
+    public void preencherMatriz() {
+        for (int i = 0; i < this.matriz.length; i++) {
+            for (int j = 0; j < this.matriz[i].length; j++) {
+                matriz[i][j] = gerarNumerosAleatorios();
+            }
+        }
+    }
+    // Declaração do método preencherMatriz
 }

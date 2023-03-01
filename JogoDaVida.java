@@ -3,8 +3,7 @@ import java.util.Random;
 
 public class JogoDaVida{
    static Validacao validador = new Validacao();
-   static int n;
-   static int[][] matriz = new int[n][n];
+   static Matriz matriz = new Matriz();
 	
    //Declaração do método formatarMatriz
    public static String formatarMatriz(int[][] matriz){
@@ -75,17 +74,18 @@ public class JogoDaVida{
    public static void main(String[] args){
       //Variaveis
       Scanner leia = new Scanner(System.in);
-      
+      matriz.definirDimencaoMatriz();
       //Variaveis
-      
-      //Declara o tamnho da Matriz
+     /* //Declara o tamnho da Matriz
       System.out.println("Qual tamanho da Matriz?");
       int n = leia.nextInt();
       matriz = new int[n][n];
-      //Declara o tamnho da Matriz
-      preencherMatriz(matriz);
+      //Declara o tamnho da Matriz*/
+      matriz.preencherMatriz();
       //Chama o método formatarMatriz para imprimir a matriz formatada
-      System.out.println(formatarMatriz(matriz));
-      jogoDaVida(matriz,matriz.length);
+      System.out.println(matriz.formatarMatriz());
+      System.out.println(matriz.length());
+      System.out.println(matriz.getMatriz());
+      jogoDaVida(matriz.getMatriz(),matriz.length());
    }
 }

@@ -49,12 +49,27 @@ public class JogoDaVida{
    
    */
    public static void jogoDaVida(int[][] matriz,int k){
+      int contador = 0;
       k-=1;
       System.out.println("N = "+ k);
        for(int i = 0; i < matriz.length; i++){
          for(int j = 0; j < matriz[i].length; j++){
              if(validador.validacaoDasPontas(i,j,k)){
-               System.out.println("Estou no canto");
+               if(validador.validaCantoSuperiorEsquerdo(contador)){
+                  System.out.println("Estou no canto Superior Esquerdo");
+                  contador++;
+               }else if(validador.validaCantoSuperiorDireito(contador)){
+                  System.out.println("Estou no canto Superior Direito");
+                  contador++;
+               }else if(validador.validaCantoInferiorEsquerdo(contador)){
+                  System.out.println("Estou no canto Inferior Esquerdo");
+                  contador++;
+               }else if(validador.validaCantoInferiorDireito(contador)){
+                  System.out.println("Estou no canto Inferior Direito");
+                  contador = 0;
+               }else{
+                  System.out.println("ERRO NO CANTO! \n VERIFIQUE A CLASSE DE LOGICA");
+               }
              }else if(validador.validaBordaSuperior(i,j,k)){
                System.out.println("Estou na borda Superior");
              }else if(validador.validaBordaInferior(i,j,k)){

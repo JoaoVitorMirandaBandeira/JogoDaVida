@@ -40,5 +40,32 @@ class Validacao{
          return false;
       }
    }
+   public static boolean validaCantoSuperiorEsquerdo(int contador){
+      if(contador == 0){
+         return true;
+      }
+      return false;
+   }
+   public static boolean validaCantoSuperiorDireito(int contador){
+      if(contador == 1){
+         return true;
+      }
+      return false;
+   }
+   public static boolean validaCantoInferiorEsquerdo(int contador){
+      if(contador == 2){
+         return true;
+      }
+      return false;
+   }
+   public static boolean validaCantoInferiorDireito(int contador){
+      if(contador == 3){
+         return true;
+      }
+      return false;
+   }
+
+
+
 
 }

@@ -16,6 +16,9 @@ public class Matriz {
     public int[][] getMatriz(){
       return this.matriz;
     }
+    public void setMatriz(int[][] matriz){
+      this.matriz = matriz;
+    }
     // Declaração do método formatarMatriz
     public String formatarMatriz() {
         String matrizFormatada = "";

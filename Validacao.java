@@ -40,24 +40,28 @@ class Validacao{
          return false;
       }
    }
+   //Valida se a analise esta no CANTO SUPERIOR ESQUERDO
    public static boolean validaCantoSuperiorEsquerdo(int contador){
       if(contador == 0){
          return true;
       }
       return false;
    }
+   //Valida se a analise esta no CANTO SUPERIOR DIREITO
    public static boolean validaCantoSuperiorDireito(int contador){
       if(contador == 1){
          return true;
       }
       return false;
    }
+   //Valida se a analise esta no CANTO INFERIOR ESQUERDO
    public static boolean validaCantoInferiorEsquerdo(int contador){
       if(contador == 2){
          return true;
       }
       return false;
    }
+   ////Valida se a analise esta no CANTO INFERIOR DIREITO
    public static boolean validaCantoInferiorDireito(int contador){
       if(contador == 3){
          return true;

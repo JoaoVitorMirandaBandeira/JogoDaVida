@@ -3,30 +3,33 @@ import java.util.Random;
 import java.util.Arrays;
 
 public class JogoDaVida {
-   static Validacao validador = new Validacao();
-   static Matriz matriz = new Matriz();
-   static int[][] matrizAnterior ;
-   static int[][] newMatriz ;
-
-   // Declaração do método gerarNumerosAleatorios
-   public static int gerarNumerosAleatorios() {
-      Random rand = new Random();
-      int random = rand.nextInt(2);
-      return random;
+   private Validacao validador = new Validacao();
+   private Matriz matriz = new Matriz();
+   private int[][] matrizAnterior ;
+   private int[][] newMatriz ;
+   
+   //Responsavel por pegar todos os metodos do objeto matriz
+   public Matriz getMetodosMatriz(){
+    return matriz;
    }
-   // Declaração do método gerarNumerosAleatorios
-
-   // Declaração do método preencherMatriz
-   public static void preencherMatriz(int[][] matriz) {
-      for (int i = 0; i < matriz.length; i++) {
-         for (int j = 0; j < matriz[i].length; j++) {
-            matriz[i][j] = gerarNumerosAleatorios();
-         }
-      }
+   //responsavel por pegar o atributo matriz do objeto Matriz
+   public int[][] getMatriz(){
+      return matriz.getMatriz();
+   }
+   public int[][] getMatrizAnterior(){
+      return matrizAnterior;
+   }
+   public int[][] getNewMatriz(){
+      return newMatriz;
+   }
+   public void setMatrizAnterior(int[][] matriz){
+      this.matrizAnterior = matriz;
+   }
+   public void setNewMatriz(int[][] matriz){
+      this.newMatriz = matriz;
    }
 
-   // Declaração do método preencherMatriz
-   public static int regrasDeAtualizacaoDaMatriz(int value, int somatorio) {
+   public int regrasDeAtualizacaoDaMatriz(int value, int somatorio) {
       if (value == 1) {
          if (somatorio < 2) {
             return 0;
@@ -41,10 +44,10 @@ public class JogoDaVida {
       return value;
    }
 
-   public static int[][] jogoDaVida(int[][] matriz, int k) {
+   public int[][] jogoDaVida(int[][] matriz, int k) {
       int contador = 0;
       k -= 1;
-      System.out.println("N = " + k);
+      //System.out.println("N = " + k);
       for (int i = 0; i < matriz.length; i++) {
          for (int j = 0; j < matriz[i].length; j++) {
             // Valida onde esta sendo analisado a matriz, para fazer as tratativas coretas.
@@ -109,7 +112,7 @@ public class JogoDaVida {
       }
       return matriz;
    }
-   public static int[][] copiaMatriz(int[][] original) {
+   public int[][] copiaMatriz(int[][] original) {
       int[][] copy = new int[original.length][original[0].length];
       for (int i = 0; i < original.length; i++) {
           for (int j = 0; j < original[i].length; j++) {
@@ -117,26 +120,5 @@ public class JogoDaVida {
           }
       }
       return copy;
-  }
-
-   public static void main(String[] args) {
-      // Variaveis
-      matriz.definirDimencaoMatriz();
-      // Variaveis
-      matriz.preencherMatriz();
-      // Chama o método formatarMatriz para imprimir a matriz formatada
-      System.out.println(matriz.formatarMatriz());
-      
-do {
-   Scanner scanner = new Scanner(System.in);
-    matrizAnterior = copiaMatriz(matriz.getMatriz());
-   //  System.out.println(matriz.formatarMatriz());
-    newMatriz = jogoDaVida(matriz.getMatriz(), matriz.length());
-    matriz.setMatriz(newMatriz);
-    System.out.println(matriz.formatarMatriz());
-    System.out.println(!Arrays.deepEquals(matrizAnterior, newMatriz));
-    System.out.println("Pressione Enter para continuar...");
-    scanner.nextLine(); // aguarda a entrada do usuário
-} while (!Arrays.deepEquals(matrizAnterior, newMatriz));
    }
 }

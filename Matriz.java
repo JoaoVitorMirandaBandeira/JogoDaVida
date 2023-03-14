@@ -2,8 +2,8 @@ import java.util.*;
 
 public class Matriz {
     Scanner leia = new Scanner(System.in);
-    int n;
-    int[][] matriz;
+    private int n;
+    private int[][] matriz;
 
     public void definirDimencaoMatriz() {
         System.out.println("Qual tamanho da Matriz?");

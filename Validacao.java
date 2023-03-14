@@ -68,8 +68,4 @@ class Validacao{
       }
       return false;
    }
-
-
-
-
 }

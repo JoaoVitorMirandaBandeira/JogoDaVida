@@ -16,12 +16,14 @@ usuário saia ou até que a grade se estabilize (sem alteração de uma geraçã
 
 ## Como Rodar o Jogo?
 
-Para Rodar o jogo e bem simples, basta seguir os passos a baixo:<br><br>
+Para executar o jogo, basta seguir os seguintes passos:<br><br>
 
-1. Crie um clone do repositorio em sua maquina.
+1. Crie um clone do repositório em sua máquina.
   ```
     git clone https://github.com/JoaoVitorMirandaBandeira/JogoDaVida.git
   ```
-2. Abra o arquivo Main.java no JGrasp(Preferencialmente).
-3. Compile o codigo.
-4. Agora e so da start no codigo e seguir as instruções no terminal
+2. Abra o arquivo Main.java no JGrasp (preferencialmente).
+3. Compile o código.
+4. Agora é só dar "start" no código e seguir as instruções no terminal.
+
+__OBS:__ Pode ser usado qualquer outro software que compile e execute arquivos _.java_ .

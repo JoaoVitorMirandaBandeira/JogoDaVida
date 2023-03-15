@@ -1,4 +1,5 @@
 import java.util.*;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class Matriz {
     Scanner leia = new Scanner(System.in);
